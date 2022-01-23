@@ -1,0 +1,39 @@
+.button {
+	padding: 10px;
+	font-size: 15px;
+	background-color: white;
+	border-radius: 6px;
+	border: 1px solid lightgrey;
+	
+}
+
+.button:last-child {
+	display: none;
+	
+}
+
+.question {
+	padding: 15px;
+	display: none;
+}
+
+.question li {
+	margin-left: 25px;
+	line-height: 1.5;
+	list-style: none;
+	padding: 5px;
+	border: 1px solid lightgrey;
+	padding-left: 10px;
+	
+}
+
+
+
+
+
+strong {
+	line-height: 3;
+}
+
+
+

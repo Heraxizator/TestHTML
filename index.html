@@ -1,0 +1,113 @@
+<html>
+ <head>
+  	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	 <link rel="stylesheet" type="text/css" href="style.css">
+   
+  	<title>Test of HTML and CSS</title>
+ </head>
+ <body>
+ 	 <button class="button">Start the HTML and CSS Quiz</button>
+	 <ol id="block">
+		 <ol class="question"><strong>What does css stand for</strong>
+			 <li>Hypertext Markup Language</li>
+			 <li>Cascading Style Sheets</li>
+			 <li>Creating interactive effects</li>
+		 </ol>
+		 
+		 <ol class="question"><strong>Where in an HTML document is the correct place to refer to an external style sheet?</strong>
+			 <li>At the end of the document</li>
+			 <li>In the body section</li>
+			 <li>In the head section</li>
+		 </ol>
+		 
+		 <ol class="question"><strong>Which HTML tag is used to define an internal style sheet?</strong>
+			 <li>css</li>
+			 <li>style</li>
+			 <li>script</li>
+		 </ol>
+		 
+		 <ol class="question"><strong>Which is the correct CSS syntax?</strong>
+			 <li>{body;color;black;}</li>
+			 <li>body:color=black;</li>
+			 <li>body{color:black;}</li>
+			 <li>{body:color=black;}</li>
+		 </ol>
+		 
+		 <ol class="question"><strong>Which property is used to change the background color?</strong>
+			 <li>color</li>
+			 <li>bgcolor</li>
+			 <li>background-color</li>
+		 </ol>
+		 
+		 <button class="button">Finish</button>
+	 </ol>
+	 
+	 
+	 
+	 <script src="jquery-3.6.0.min.js"></script>
+	
+ </body>
+	
+	<script>
+		
+		$(document).ready(function() {
+			
+			
+			$('li').mouseover(function() {
+				$('li').not('.active').css('background-color', 'white');
+				$(this).css('background-color', 'rgb(173, 216, 231)');
+				//$(this).removeClass('active');
+			});
+			
+			$('li').click(function() {
+				$(this).siblings().removeClass('active');
+				$(this).toggleClass('active');
+				$(this).css('background-color', 'rgb(173, 216, 231)');
+				$(this).parent().next().first().css('display', 'block');
+				if ($('ol .question').last().css('display') == 'block') {
+					$('.button').last().css('display', 'block');
+
+				}
+	
+			});
+			
+			
+			$('.button').first().click(function() {
+				$('.question').siblings().filter(':first').css('display', 'block');
+			});
+			
+			
+			
+			$('button').last().click(function() {
+				let k = 0;
+				a = $('li');
+				
+				if (a.eq(1).css('background-color') == 'rgb(173, 216, 231)') {
+					k++;
+				}
+				
+				if (a.eq(5).css('background-color') == 'rgb(173, 216, 231)') {
+					k++;
+				}
+				
+				if (a.eq(7).css('background-color') == 'rgb(173, 216, 231)') {
+					k++;
+				}
+				
+				if (a.eq(11).css('background-color') == 'rgb(173, 216, 231)') {
+					k++;
+				}
+				
+				if (a.eq(15).css('background-color') == 'rgb(173, 216, 231)') {
+					k++;
+				}
+				
+				alert('Ваш результат:' + ' ' + k + ' ' + 'из 5');
+				
+				
+			});
+			
+		});
+		
+	</script>
+</html>
